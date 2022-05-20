@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>Exemplo Flexbox</title>
+        <style>
+            * {
+                margin:0;
+            }
+            .container {
+                background-color:rgb(5, 31, 46);
+                padding: 16px;
+                height: 500px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center; /* alinha as div dentro do container de forma horizontal (space between mantem ocupando a linha toda espacando entre itens) */
+                align-items: center; /* alinha as div verticalmente no container (colando uma na outra) */
+                flex-wrap: wrap; /* mantem a largura original das div jogando pra linha de baixo (ou de cima se for wrap-reverse) se diminuir a janela */
+                align-content: center; /* alinha as div horizontalmente mantendo espaço entre elas */
+                row-gap: 16px;
+                column-gap: 16px;
+
+            }
+            .caixa-1 {
+                background-color: #3a5374;
+                height: 150px;
+                width: 150px;
+                text-align: center;
+                font-family: fantasy;
+                font-size: 40px;
+                color: white;
+                border-radius: 16px;
+            }
+            .caixa-2 {
+                background-color:  rgb(13, 99, 133);
+                height: 150px;
+                width: 150px;
+                text-align: center;
+                font-family:fantasy;
+                font-size: 40px;
+                color: white;
+                border-radius: 16px;
+            }
+            .caixa-3 {
+                background-color: rgb(30, 54, 63);
+                height: 150px;
+                width: 150px;
+                text-align: center;
+                font-family:fantasy;
+                font-size: 40px;
+                color: white;
+                border-radius: 16px;
+            }
+            
+
+
+            
+        </style>
+    </head>
+    <body>
+        <main class="container">
+            <div class="caixa-1">1</div>
+            <div class="caixa-2">2</div>
+            <div class="caixa-3">3</div>
+            <div class="caixa-1">4</div>
+            <div class="caixa-2">5</div>
+            <div class="caixa-3">6</div>
+            <div class="caixa-1">7</div>
+            <div class="caixa-2">8</div>
+            <div class="caixa-3">9</div>
+            <div class="caixa-1">10</div>
+            <div class="caixa-2">11</div>
+            <div class="caixa-3">12</div>
+        </main>
+    </body>
+</html>
