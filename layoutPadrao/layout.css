@@ -1,0 +1,38 @@
+* {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header {
+    display:flex;
+    justify-content: space-around;
+    border: 2px solid #2F91D6;
+    background-color: #44EBE2;
+    height: 90px;
+    align-items: center;
+}
+#pesquisa { 
+    width: 500px;
+    height: 30px;
+    border: 2px solid #2F91D6;
+    border-radius: 10px;
+    padding-left: 5px;
+    
+}
+#bt_pesquisar {
+    height: 30px;
+    font-weight: bold;
+    border: 2px solid #2f91d6;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #0a1a96;
+}
+#bt_pesquisar:hover{
+    background-color: #4B60FA;
+    color: #dde2e7;
+    border: 2px solid #dde2e7;
+
+}
+#menuConfig {
+    cursor: pointer;
+}
+
