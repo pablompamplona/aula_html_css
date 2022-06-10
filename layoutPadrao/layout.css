@@ -1,6 +1,7 @@
 * {
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
+    /*border: 1px solid black;*/
 }
 header {
     display:flex;
@@ -35,4 +36,32 @@ header {
 #menuConfig {
     cursor: pointer;
 }
+main {
+    display: grid;
+    grid-template-columns: 600px auto 346px;
+}
+.container {
+    display: grid;
+    grid-template-rows: 250px auto;
+    height: 530px;
+    padding: auto;
+    margin: 10px;
+}
+.caixa {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: auto auto;
+
+}
+#toyota {
+    text-align: center;
+    margin-top: 30px;
+    color: red;
+   
+}
+#textoToyota {
+    text-align: justify;
+    font-size: 22px;
+}
+
 
