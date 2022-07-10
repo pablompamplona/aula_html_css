@@ -87,6 +87,12 @@ nav li a {
 nav.home li.link_home a, nav a:hover {
     color: #919191;
 }
+nav.empresa li.link_empresa a, nav a:hover {
+  color: #919191;
+}
+nav.servico li.link_servico a, nav a:hover {
+  color: #919191;
+}
 main {
     width: 980px;
     height: 450px;
@@ -143,8 +149,8 @@ a.botao{
     color: #FFF;
     border: 1px solid;
     border-radius: 5px;
-    -webkit-animation: bounce-in-top 2.7s both;
-	        animation: bounce-in-top 2.7s both;
+    -webkit-animation: bounce-in-top 3.0s both;
+	        animation: bounce-in-top 3.0s both;
 }
 .botao.saiba_mais_caminhoes{
     background: linear-gradient(to right, #dae670, #ddec0c);
@@ -286,6 +292,22 @@ figcaption.text-client {
   background-color: #333333;
   /* border: 1px solid #666666; */
 }
+#botoes {
+  display: flex;
+  margin-top: 10px;
+}
+#caixa_formulario input[type=submit], #caixa_formulario input[type=reset] {
+  margin-right: 10px;
+  cursor: pointer;
+  background-color: #FF9900;
+  color: #232323;
+}
+#caixa_formulario input[type=submit]:hover, #caixa_formulario input[type=reset]:hover {
+  background-color: #333333;
+  color: #ccc;
+  border-color: #ccc;
+}
+
 
 
 

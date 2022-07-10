@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Java Script</title>
+        <script>
+            // const nome = "Pablo";
+            // console.log(nome);
+
+            // let idade = 41;
+            // console.log("Ola " + nome + " sua idade e " + idade + " anos.");
+
+            let multiplicadorInicial = prompt("Digite um numero para iniciar: ");
+            let multiplicadorFinal = prompt("Digite um numero para encerrar: ");
+            let copoVazio;
+            if (multiplicadorInicial > multiplicadorFinal) {
+                copoVazio = multiplicadorFinal;
+                multiplicadorFinal = multiplicadorInicial;
+                multiplicadorInicial = copoVazio;
+            }
+            if((multiplicadorInicial <= 10 && multiplicadorInicial >= 0) && (multiplicadorFinal <= 10 && multiplicadorFinal >= 0) && (multiplicadorFinal >= multiplicadorInicial)) {
+                let multiplicador = multiplicadorInicial
+                console.log("****************************************")
+                console.log("Tabuada de " + multiplicador + ":")
+                for (let index = multiplicadorInicial; index <= multiplicadorFinal; index++) {
+                    for (let index = 1; index <= 10; index++) {
+                    let result = multiplicador * index;
+                    console.log(multiplicador + " X "  + index + " = " + result)
+                    }
+                    multiplicador++
+                    console.log("****************************************") 
+            }
+                    
+        }
+        
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
