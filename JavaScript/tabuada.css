@@ -1,0 +1,10 @@
+body {
+    background-image: linear-gradient(aquamarine, white);
+}
+ul {
+    display: inline-block;
+}
+li {
+    list-style: none;
+    
+}
