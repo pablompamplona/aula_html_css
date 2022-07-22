@@ -29,5 +29,6 @@ button:hover{
 input {
     padding: 5px;
     border: none;
-    outline: #8e97c7
+    outline: #8e97c7;
+    border-radius: 5px;
 }
