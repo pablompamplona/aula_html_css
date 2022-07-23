@@ -307,6 +307,48 @@ figcaption.text-client {
   color: #ccc;
   border-color: #ccc;
 }
+#empresaMain {
+  width: 980px;
+  height: 400px;
+  margin-top: 10px;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  -webkit-animation: slide-in-bck-center 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s both;
+	        animation: slide-in-bck-center 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s both;
+}
+
+.valores {
+  text-align: center;
+  padding-top: 20px;
+  color: #333333;
+  font-size: 1.1em;
+}
+.valores h3 {
+  font-weight: bold;
+}
+#empresaMain {
+  display: grid;
+  grid-template-columns: auto 280px;
+  padding-right: 40px;
+  color: white;
+}
+.map {
+  margin-top: 40px;
+  margin-left: 40px;
+}
+.ondeEstamos {
+  margin-top: 40px;
+}
+.ondeEstamos p {
+  text-align: justify;
+  font-size: 1.2em;
+}
+.ondeEstamos h3 {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
 
 
 
