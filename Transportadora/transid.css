@@ -201,7 +201,7 @@ a.botao{
 #sectionClient h1{
     text-align: center;
     padding-top: 10px;
-    color: #232323;
+    color: #0f1849;;
     font-weight: bold;
     -webkit-animation: slide-in-fwd-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.8s both;
 	        animation: slide-in-fwd-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.8s both;
@@ -320,7 +320,7 @@ figcaption.text-client {
 .valores {
   text-align: center;
   padding-top: 20px;
-  color: #333333;
+  color: #0f1849;
   font-size: 1.1em;
 }
 .valores h3 {
@@ -348,6 +348,41 @@ figcaption.text-client {
   margin-right: auto;
   text-align: center;
 }
+.servicoMain {
+  width: 980px;
+  height: 640px;
+  /* border: 1px solid red; */
+  background-color: #f3efef5e;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 328px 328px 328px;
+  padding-top: 35px;
+  padding-left: 100px;
+  border-radius: 20px;
+  -webkit-animation: slide-in-bck-center 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.2s both;
+	        animation: slide-in-bck-center 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.2s both;
+}
+#painelServicos {
+  width: 220px;
+  height: 250px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px black;
+  color: #0f1849;
+  text-align: center;
+  padding: 40px 5px 0 5px;
+  -webkit-animation: slide-in-bck-center 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.7s both;
+	        animation: slide-in-bck-center 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.7s both;
+ 
+}
+#mainServ {
+  height: auto;
+}
+h4 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
 
 
 
