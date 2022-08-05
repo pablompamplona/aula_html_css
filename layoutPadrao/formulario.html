@@ -1,0 +1,166 @@
+<html>
+    <head>
+        <title>Formulario</title>
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                
+            }
+            main{
+                display: grid;
+                grid-template-columns: 500px 650px;
+              
+                
+            }
+            #form, #maps{
+                /* border: 1px solid red; */
+                padding: 15px;
+                margin: 10px;
+                box-shadow: 1px 1px 5px black;
+             
+                
+
+            }
+            label{
+                display: block;
+                margin-bottom: 15px;
+            }
+            label span {
+                display: block;
+            }
+            input, select {
+                width: 100%;
+                height: 30px;
+                padding: 5px;
+                border-radius: 5px;
+            }
+            input[type=radio], input[type=checkbox], input[type=submit], input[type=reset]{
+                width: auto;
+                height: auto;
+            }
+            #data {
+                display: grid;
+                grid-template-columns: 50% auto;
+            }
+            #cepLogra {
+                display: grid;
+                grid-template-columns: 20% auto;
+            }
+            #data div:first-child{
+                margin-right: 5px;
+            }
+            #bairroCidadeUf {
+                display: grid;
+                grid-template-columns: 45% 45% auto;    
+            }
+            #cepLogra div:first-child{
+                margin-right: 5px;
+            }
+            #bairroCidadeUf div:first-child{
+                margin-right: 5px;
+            }
+            #bairroCidadeUf div:last-child{
+                margin-left: 5px;
+            }
+            
+
+           
+
+        </style>
+    </head>
+    <body>
+        <main>
+            <div id="form">
+                <form action="#" method="POST">
+                    <h1>Dados Pessoais</h1>
+                    <label>
+                        <span>Nome:</span>
+                        <input type="text" id="nome" name="nome" />
+                    </label>
+
+                    <label>
+                        <span>E-Mail:</span>
+                        <input type="email" id="email" name="email" />
+                    </label>
+
+                    <label>
+                        <span>Sexo:</span>
+                        <input type="radio" class="sexo" name="sexo" value="M">Masculino
+                        <input type="radio" class="sexo" name="sexo" value="F">Feminino
+                    </label>
+
+                    <label>
+                        <span>Esporte:</span>
+                        <input type="checkbox" class="esporte" name="esporte" value="futebol">Futebol
+                        <input type="checkbox" class="esporte" name="esporte" value="volei">Volei
+                        <input type="checkbox" class="esporte" name="esporte" value="natação">Natação
+                        <input type="checkbox" class="esporte" name="esporte" value="crossfit">Crossfit
+                        <input type="checkbox" class="esporte" name="esporte" value="pogobol">Pogobol
+                    </label>
+
+                    <label id="data">
+                        <div>
+                            <span>Data de Nascimento</span>
+                        <input type="date" name="date">
+                        </div>
+                        <div>
+                            <span>Horário de Treinamento</span>
+                        <select name="mesNascimento">
+                            <option value="Selecione um turno">Selecione um mês</option>
+                            <option value="Matutino">Matutino</option>
+                            <option value="Vespertino">Vespertino</option>
+                            <option value="Noturno">Noturno</option>
+                            <option value="Integral">Integral</option>
+                        </select>
+                        </div>
+                    </label>
+
+                    <h1>Endereço</h1>
+                        <label id="cepLogra">
+                            <div>
+                                <span>CEP:</span>
+                                <input type="text" id="cep" name="cep" />
+                            </div> 
+                            <div>
+                                <span>Logradouro:</span>
+                                <input type="text" id="logradouro" name="logradouro" />
+                            </div>
+                        </label>
+                        
+                        <label id="bairroCidadeUf">
+                            <div>
+                                <span>Bairro:</span>
+                                <input type="text" id="bairro" name="bairro" />
+                            </div>
+                            <div>
+                                <span>Cidade:</span>
+                                <input type="text" id="cidade" name="cidade" />
+                            </div>
+                            <div>
+                                <span>UF: </span>
+                                <input type="text" id="uf" name="uf" />
+                            </div>
+                        </label>
+                        <label>
+                           
+                        </label>
+                        <label>
+                            
+                        </label>
+
+                        <input type="submit" name="submit" value="Enviar"/>
+                        <input type="reset" name="reset" value="Limpar"/>
+
+
+
+                    
+
+                </form>
+                
+            </div>
+            <div id="maps">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d28287.63538499135!2d-48.604694177110865!3d-27.594942602433175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sboca%20dog%20estreito!5e0!3m2!1spt-BR!2sbr!4v1659650364602!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </main>
+    </body>
+</html>
