@@ -1,25 +1,94 @@
 <html>
     <head>
         <title>Formulario</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+
+            $(document).ready(function() {
+    
+                function limpa_formulário_cep() {
+                    // Limpa valores do formulário de cep.
+                    $("#logradouro").val("");
+                    $("#bairro").val("");
+                    $("#cidade").val("");
+                    $("#uf").val("");
+                    // $("#ibge").val("");
+                }
+                
+                //Quando o campo cep perde o foco.
+                $("#cep").blur(function() {
+    
+                    //Nova variável "cep" somente com dígitos.
+                    var cep = $(this).val().replace(/\D/g, '');
+    
+                    //Verifica se campo cep possui valor informado.
+                    if (cep != "") {
+    
+                        //Expressão regular para validar o CEP.
+                        var validacep = /^[0-9]{8}$/;
+    
+                        //Valida o formato do CEP.
+                        if(validacep.test(cep)) {
+    
+                            //Preenche os campos com "..." enquanto consulta webservice.
+                            $("#logradouro").val("...");
+                            $("#bairro").val("...");
+                            $("#cidade").val("...");
+                            $("#uf").val("...");
+                            // $("#ibge").val("...");
+    
+                            //Consulta o webservice viacep.com.br/
+                            $.getJSON("https://viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
+    
+                                if (!("erro" in dados)) {
+                                    //Atualiza os campos com os valores da consulta.
+                                    $("#logradouro").val(dados.logradouro);
+                                    $("#bairro").val(dados.bairro);
+                                    $("#cidade").val(dados.localidade);
+                                    $("#uf").val(dados.uf);
+                                    // $("#ibge").val(dados.ibge);
+                                } //end if.
+                                else {
+                                    //CEP pesquisado não foi encontrado.
+                                    limpa_formulário_cep();
+                                    alert("CEP não encontrado.");
+                                }
+                            });
+                        } //end if.
+                        else {
+                            //cep é inválido.
+                            limpa_formulário_cep();
+                            alert("Formato de CEP inválido.");
+                        }
+                    } //end if.
+                    else {
+                        //cep sem valor, limpa formulário.
+                        limpa_formulário_cep();
+                    }
+                });
+            });
+    
+        </script>
         <style>
             body{
-                font-family: Arial, Helvetica, sans-serif;
-                
+                font-family: Arial, Helvetica, sans-serif;  
+                background-color: rgb(114, 111, 108); 
             }
             main{
+                margin: 0px;
                 display: grid;
                 grid-template-columns: 500px 650px;
-              
-                
+                padding-left: 90px;
+               
+               
             }
             #form, #maps{
-                /* border: 1px solid red; */
                 padding: 15px;
                 margin: 10px;
                 box-shadow: 1px 1px 5px black;
-             
-                
-
+                height: 600px;    
+                background-color: rgb(39, 36, 36); 
+                color: rgb(216, 212, 212);        
             }
             label{
                 display: block;
@@ -33,6 +102,7 @@
                 height: 30px;
                 padding: 5px;
                 border-radius: 5px;
+                background-color: rgb(216, 212, 212); 
             }
             input[type=radio], input[type=checkbox], input[type=submit], input[type=reset]{
                 width: auto;
@@ -44,7 +114,7 @@
             }
             #cepLogra {
                 display: grid;
-                grid-template-columns: 20% auto;
+                grid-template-columns: 20% 60% auto;
             }
             #data div:first-child{
                 margin-right: 5px;
@@ -56,16 +126,17 @@
             #cepLogra div:first-child{
                 margin-right: 5px;
             }
+            #cepLogra div:last-child{
+                margin-left: 5px;
+            }
             #bairroCidadeUf div:first-child{
                 margin-right: 5px;
+                
             }
             #bairroCidadeUf div:last-child{
                 margin-left: 5px;
             }
-            
-
-           
-
+         
         </style>
     </head>
     <body>
@@ -125,6 +196,10 @@
                                 <span>Logradouro:</span>
                                 <input type="text" id="logradouro" name="logradouro" />
                             </div>
+                            <div>
+                                <span>Num/Compl:</span>
+                                <input type="text" id="numeroCompl" name="numeroCompl" />
+                            </div>
                         </label>
                         
                         <label id="bairroCidadeUf">
@@ -141,13 +216,7 @@
                                 <input type="text" id="uf" name="uf" />
                             </div>
                         </label>
-                        <label>
-                           
-                        </label>
-                        <label>
-                            
-                        </label>
-
+                        
                         <input type="submit" name="submit" value="Enviar"/>
                         <input type="reset" name="reset" value="Limpar"/>
 
@@ -159,7 +228,9 @@
                 
             </div>
             <div id="maps">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d28287.63538499135!2d-48.604694177110865!3d-27.594942602433175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sboca%20dog%20estreito!5e0!3m2!1spt-BR!2sbr!4v1659650364602!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <h1>Centro de Treinamento - UDESC</h1>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3535.5118503728468!2d-48.58308698527392!3d-27.608659929236293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x952737bc4a086d15%3A0xa2bdeeaffd8b171!2sUdesc%20Cefid!5e0!3m2!1spt-BR!2sbr!4v1659742911300!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <p>Confira a localização do seu centro de treinamento</p>
             </div>
         </main>
     </body>
