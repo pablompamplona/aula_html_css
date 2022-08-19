@@ -1,0 +1,131 @@
+<html>
+    <head>
+        <title>Tabuada</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            function calcular() {
+                const tab = $("#tabuada").val();
+                // $("#tabuadaSelecionada").text("Tabuada do " + tab);
+                let result = "";
+                for (let index = 1; index <= 10; index++) {
+                    result += `<div id="linhaTab"><span id="tabElementTab">${tab} x</span> <span id="tabElementIndex">${index} =</span> <span id="tabElementResult">${tab*index}<\span></div>`
+                
+                }
+                $("#tabuadaResultado").text ("");
+                let resultBox = `<div id="tabBox"><span id="titleTab">Tabuada do ${tab}</span><br><br>${result}</div>`;
+                $(resultBox).appendTo("#tabuadaResultado");
+
+            }
+        </script>
+        <style>
+            body{
+                font-family: 'Montserrat', sans-serif;
+                background: linear-gradient(to right, #0c26b4, rgba(11, 129, 119, 0.644));
+                color: white;
+            }
+            #boxFieldset {
+                width: 800px;
+                height: 200px;
+                margin-top: 20px;
+                margin-left: auto;
+                margin-right: auto;
+                background-color: rgba(0, 0, 0, 0.5);
+                border-radius: 10px;
+                border: 0px solid rgba(0, 0, 0, 0.5);
+                padding-top: 1px;
+                box-shadow: 1px 1px 5px black;
+            }
+            
+            .formTabuada {
+                margin-top: 20px;
+                width: 600px;
+                height: 120px;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+                padding-top: 20px;
+
+            }
+            button {
+                background-color: rgb(82, 128, 212);
+                border: none;
+                padding: 1em;
+                border-radius: 10px;
+                color: white;
+                box-shadow: 1px 1px 5px black;
+                cursor: pointer; 
+                
+            }
+            button:hover{
+                background-color: rgba(20, 177, 240, 0.959);
+            }
+            input {
+                padding: 5px;
+                width: 100px;
+                border: none;
+                outline: #8e97c7;
+                border-radius: 5px;
+            }
+            
+            legend {
+                font-weight: bolder;
+                text-align: left;
+                
+            }
+            #containerTabuada {
+                align-items: center;
+                width: 250px;
+                height: 250px;
+                margin-top: 50px;
+                margin-left: auto;
+                margin-right: auto;
+                display: grid;
+                text-align: center;
+            }
+            #linhaTab {
+                display: grid;
+                grid-template-columns: 25px 35px 25px;
+                margin-left: 80px;
+                margin-right: auto;
+            }
+            #tabElementTab {
+                text-align: right;
+
+            }
+            #tabElementIndex {
+                text-align: right;
+            }
+            #tabElementResult {
+                text-align: right;
+            }
+            #tabBox {
+                margin-top: 5px;
+                padding-top: 20px;
+                padding-bottom: 30px;
+                background-color: rgba(0, 0, 0, 0.5);
+                border-radius: 10px;
+                border: 0px solid rgba(0, 0, 0, 0.5);
+                box-shadow: 1px 1px 5px black;
+            }
+            
+        </style>
+    </head>
+    
+    <body>
+        <div id="boxFieldset">
+            <fieldset class="formTabuada">
+                <legend>GERADOR DE TABUADA</legend>
+                <label from="numero">Informe um número:</label>
+                <input id="tabuada" type="text" placeholder="Digite nro 0 - 9"><br><br>
+                <button onclick="calcular()">Calcular</button>
+            </fieldset>
+            <div id="containerTabuada">
+                <span id="tabuadaSelecionada"></span>
+                <span id="tabuadaResultado"></span>
+            </div>
+        </div>
+        
+       
+
+    </body>
+</html>
