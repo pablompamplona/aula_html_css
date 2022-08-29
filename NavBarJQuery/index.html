@@ -1,0 +1,188 @@
+<html>
+    <head>
+        <title>Sistema Navegação</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="js/sistemaNavBar.js" type="text/javascript"></script>
+        <script src="js/formNavBar.js" type="text/javascript"></script>
+        <script src="js/calcImcNavBar.js" type="text/javascript"></script>
+        <script src="js/tabuadaNavBar.js" type="text/javascript"></script>
+        <script src="js/seqTabNavBar.js" type="text/javascript"></script>
+        <link href="css/sistemaNavBar.css" type="text/css" rel="stylesheet"/>
+        <link href="css/tabuadaNavBar.css" type="text/css" rel="stylesheet"/>
+        <link href="css/formNavBar.css" type="text/css" rel="stylesheet"/>
+        <link href="css/calcImcNavBar.css" rel="stylesheet" type="text/css"/>
+        <link href="css/seqTabNavBar.css" rel="stylesheet" type="text/css"/>
+    </head>
+    
+    <body>
+        <div id="janelaSeqTabuada">
+            <h1>Painel de Tabuada</h1>
+            <div id="dados">
+                <label>Valor Inicial</label>
+                <input type="number" placeholder="Digite um numero" name="tab1" id="tab1"/>
+                <br> <br>
+                <label>Valor Final</label>
+                <input type="number" placeholder="Digite um numero" name="tab2" id="tab2"/>
+                <br> <br>
+                <button onclick="calcular()">Calcular</button>
+                <button type="reset" onclick="limparTela()">Reset</button>
+            </div>
+        <br> <br>
+        <div id="seqTabResult"></div>
+        </div>
+        <div id="janelaTabuada">
+            <div id="boxFieldsetJanela">
+                <fieldset class="formTabuadaJanela">
+                    <legend>GERADOR DE TABUADA</legend>
+                    <label from="numero">Informe um número:</label>
+                    <input id="tabuadaJanela" type="text" placeholder="Digite nro 0 - 9"><br><br>
+                    <button onclick="calcularTab()">Calcular</button>
+                </fieldset>
+                <div id="containerTabuadaJanela">
+                    <span id="tabuadaSelecionada"></span>
+                    <span id="tabuadaResultado"></span>
+                </div>
+            </div>
+        </div>
+        <div id="janelaCalcImc">
+            <h1>CALCULADORA DE IMC</h1>
+            <div class="container">
+                <div class="dados">
+                    <h3>Calcule seu IMC</h3>
+                    <hr>
+                    <br>
+                    <label for="peso">Digite seu peso</label>
+                    <input type="number" placeholder="Seu peso" id="peso"/>
+                    <br> <br>
+                    <label for="altura">Digite sua altura</label>
+                    <input type="number" placeholder="Sua altura" id="altura"/>
+                    <br> <br>
+                    <button onclick="calcularImc()">Calcular</button>
+                </div>
+                <div class="resultado">
+                    <br>
+                    <h3>Resultado</h3>
+                    <br>
+                    <p id="result">...</p>
+                </div>
+            </div>   
+        </div>
+        <div id="janelaFormulario">
+            <div id="form">
+                <form action="#" method="POST">
+                    <h1>Dados Pessoais</h1>
+                    <label>
+                        <span>Nome:</span>
+                        <input type="text" id="nome" name="nome" />
+                    </label>
+
+                    <label>
+                        <span>E-Mail:</span>
+                        <input type="email" id="email" name="email" />
+                    </label>
+
+                    <label>
+                        <span>Sexo:</span>
+                        <input type="radio" class="sexo" name="sexo" value="M">Masculino
+                        <input type="radio" class="sexo" name="sexo" value="F">Feminino
+                    </label>
+
+                    <label>
+                        <span>Esporte:</span>
+                        <input type="checkbox" class="esporte" name="esporte" value="futebol">Futebol
+                        <input type="checkbox" class="esporte" name="esporte" value="volei">Volei
+                        <input type="checkbox" class="esporte" name="esporte" value="natação">Natação
+                        <input type="checkbox" class="esporte" name="esporte" value="crossfit">Crossfit
+                        <input type="checkbox" class="esporte" name="esporte" value="pogobol">Pogobol
+                    </label>
+
+                    <label id="data">
+                        <div>
+                            <span>Data de Nascimento</span>
+                        <input type="date" name="date">
+                        </div>
+                        <div>
+                            <span>Horário de Treinamento</span>
+                        <select name="horarioTreino">
+                            <option value="Selecione um turno">Selecione um turno</option>
+                            <option value="Matutino">Matutino</option>
+                            <option value="Vespertino">Vespertino</option>
+                            <option value="Noturno">Noturno</option>
+                            <option value="Integral">Integral</option>
+                        </select>
+                        </div>
+                    </label>
+
+                    <h1>Endereço</h1>
+                        <label id="cepLogra">
+                            <div>
+                                <span>CEP:</span>
+                                <input type="text" id="cep" name="cep" />
+                            </div> 
+                            <div>
+                                <span>Logradouro:</span>
+                                <input type="text" id="logradouro" name="logradouro" />
+                            </div>
+                            <div>
+                                <span>Num/Compl:</span>
+                                <input type="text" id="numeroCompl" name="numeroCompl" />
+                            </div>
+                        </label>
+                        
+                        <label id="bairroCidadeUf">
+                            <div>
+                                <span>Bairro:</span>
+                                <input type="text" id="bairro" name="bairro" />
+                            </div>
+                            <div>
+                                <span>Cidade:</span>
+                                <input type="text" id="cidade" name="cidade" />
+                            </div>
+                            <div>
+                                <span>UF: </span>
+                                <input type="text" id="uf" name="uf" />
+                            </div>
+                        </label>
+                        
+                        <input type="submit" name="submit" value="Enviar"/>
+                        <input type="reset" name="reset" value="Limpar"/>
+                </form>
+                
+            </div>
+            <div id="maps">
+                <h1>Centro de Treinamento - UDESC</h1>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3535.5118503728468!2d-48.58308698527392!3d-27.608659929236293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x952737bc4a086d15%3A0xa2bdeeaffd8b171!2sUdesc%20Cefid!5e0!3m2!1spt-BR!2sbr!4v1659742911300!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <p>Confira a localização do seu centro de treinamento</p>
+            </div>
+        </div>
+        <main>
+            <div id="menuAtivo">
+                <span class="itensMenuAtivo" id="seqTab" onclick="acionarSeqTabuada()">Sequencia de Tabuadas</span>
+                <span class="itensMenuAtivo" id="tabUnica" onclick="acionarTabUnica()">Tabuada</span>
+                <span class="itensMenuAtivo" id="calImc" onclick="acionarCalcImc()">Calculadora IMC</span>
+                <span class="itensMenuAtivo">Calculadora</span>
+                <span class="itensMenuAtivo" id="formMap" onclick="acionarForm()">Formulario</span>
+            </div>
+        </main>
+        <footer>
+            <div id="menu">
+                <span id="start" onclick="start()">Iniciar</span>
+            </div>
+            <div id="icones">icones</div>
+            <div id="utilitario">
+                <span id="relogio"></span>
+            </div>
+        </footer>
+    </body>
+    <script>
+        $("#menuAtivo").hide();
+        $("#janelaTabuada").hide();
+        $("#janelaFormulario").hide();
+        $("#janelaCalcImc").hide();
+        $("#janelaSeqTabuada").hide();
+        setInterval(function() {
+            $("#relogio").text((new Date).toLocaleString().substr(11,9));
+        }, 1000);
+        
+    </script>
+</html>
