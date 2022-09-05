@@ -15,7 +15,10 @@ function esconderElemento(elemento) {
 function mostrarElemento(elemento) {
     $(elemento).show();
 }
-function acionarSeqTabuada(elemento) {
+function acionarSeqTabuada() {
+    $("#janelaTabuada").hide();
+    $("#janelaFormulario").hide();
+    $("#janelaCalcImc").hide();
     elemento = "#janelaSeqTabuada";
     menu = "#menuAtivo";
     esconderElemento(menu);
@@ -26,7 +29,10 @@ function acionarSeqTabuada(elemento) {
         mostrarElemento(elemento);
     }
 }
-function acionarTabUnica(elemento) {
+function acionarTabUnica() {
+    $("#janelaFormulario").hide();
+    $("#janelaCalcImc").hide();
+    $("#janelaSeqTabuada").hide();
     elemento = "#janelaTabuada";
     menu = "#menuAtivo";
     esconderElemento(menu);
@@ -37,7 +43,10 @@ function acionarTabUnica(elemento) {
         mostrarElemento(elemento);
     }
 }
-function acionarCalcImc(elemento) {
+function acionarCalcImc() {
+    $("#janelaFormulario").hide();
+    $("#janelaSeqTabuada").hide();
+    $("#janelaTabuada").hide();
     elemento = "#janelaCalcImc";
     menu = "#menuAtivo";
     esconderElemento(menu);
@@ -48,8 +57,27 @@ function acionarCalcImc(elemento) {
         mostrarElemento(elemento);
     }
 }
-function acionarForm(elemento) {
+function acionarForm() {
+    $("#janelaSeqTabuada").hide();
+    $("#janelaTabuada").hide();
+    $("#janelaCalcImc").hide();
     elemento = "#janelaFormulario";
+    menu = "#menuAtivo";
+    esconderElemento(menu);
+    if($(elemento).is(":visible")){
+        esconderElemento(elemento);
+    }
+    else {
+        mostrarElemento(elemento);
+    }
+}
+
+function acionarAjaxViaCep() {
+    $("#janelaFormulario").hide();
+    $("#janelaSeqTabuada").hide();
+    $("#janelaTabuada").hide();
+    $("#janelaCalcImc").hide();
+    elemento = "#janelaAjaxViaCep";
     menu = "#menuAtivo";
     esconderElemento(menu);
     if($(elemento).is(":visible")){

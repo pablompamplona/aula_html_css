@@ -1,0 +1,15 @@
+#janelaAjaxViaCep form {
+    width: 500px;
+    height: 200px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+
+}
+#janelaAjaxViaCep {
+    position: absolute;
+    transform: translate(100%, 50%);
+}
+#janelaAjaxViaCep form input {
+    width: 200px;
+}

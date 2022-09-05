@@ -1,17 +1,20 @@
 <html>
     <head>
         <title>Sistema Navegação</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="js/sistemaNavBar.js" type="text/javascript"></script>
         <script src="js/formNavBar.js" type="text/javascript"></script>
         <script src="js/calcImcNavBar.js" type="text/javascript"></script>
         <script src="js/tabuadaNavBar.js" type="text/javascript"></script>
         <script src="js/seqTabNavBar.js" type="text/javascript"></script>
+        <script src="js/ajaxViaCep.js" type="text/javascript"></script>
         <link href="css/sistemaNavBar.css" type="text/css" rel="stylesheet"/>
         <link href="css/tabuadaNavBar.css" type="text/css" rel="stylesheet"/>
         <link href="css/formNavBar.css" type="text/css" rel="stylesheet"/>
         <link href="css/calcImcNavBar.css" rel="stylesheet" type="text/css"/>
         <link href="css/seqTabNavBar.css" rel="stylesheet" type="text/css"/>
+        <link href="css/ajaxViaCep.css" rel="stylesheet" type="text/css"/>
     </head>
     
     <body>
@@ -155,13 +158,22 @@
                 <p>Confira a localização do seu centro de treinamento</p>
             </div>
         </div>
+        <div id="janelaAjaxViaCep">
+            <form>
+                <label>CEP</label>
+                <input type="text" id="cep">
+                <button onclick="submitCep()">"Enviar"</button>
+            </form>
+            <div id="janelaConteudo"></div>            
+        </div>
         <main>
             <div id="menuAtivo">
                 <span class="itensMenuAtivo" id="seqTab" onclick="acionarSeqTabuada()">Sequencia de Tabuadas</span>
                 <span class="itensMenuAtivo" id="tabUnica" onclick="acionarTabUnica()">Tabuada</span>
-                <span class="itensMenuAtivo" id="calImc" onclick="acionarCalcImc()">Calculadora IMC</span>
+                <span class="itensMenuAtivo" id="calcImc" onclick="acionarCalcImc()">Calculadora IMC</span>
                 <span class="itensMenuAtivo">Calculadora</span>
                 <span class="itensMenuAtivo" id="formMap" onclick="acionarForm()">Formulario</span>
+                <span class="itensMenuAtivo" id="ajaxViaCep" onclick="acionarAjaxViaCep()">Ajax - ViaCEP</span>
             </div>
         </main>
         <footer>
@@ -180,6 +192,7 @@
         $("#janelaFormulario").hide();
         $("#janelaCalcImc").hide();
         $("#janelaSeqTabuada").hide();
+        $("#janelaAjaxViaCep").hide();
         setInterval(function() {
             $("#relogio").text((new Date).toLocaleString().substr(11,9));
         }, 1000);

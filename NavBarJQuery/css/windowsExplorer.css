@@ -1,0 +1,19 @@
+#janelaWindowsExplorer {
+    display: block;
+    width: 800;
+    height: 600;
+    border: 1px solid #555555;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+}
+
+
+#janelaTitle {
+    display: grid;
+    grid-template-columns: 100px auto 100px;
+    height: 30px;
+    text-align: right;
+    cursor: pointer;
+}
